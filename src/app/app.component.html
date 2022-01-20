@@ -1,6 +1,11 @@
 
 
-<app-navbar></app-navbar>
-<app-sidebar></app-sidebar>
+<app-navbar id="navbar" class="navbar-dark fixed-top bg-dark"></app-navbar>
 
-<router-outlet></router-outlet>
+<div class="container-fluid">
+  <div class="row" id="mainContent">
+    <app-sidebar id="sidebar" class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar"></app-sidebar>
+    <div class="col-sm-9 col-md-10" id="dashboard">
+    </div>
+  </div>
+</div>
