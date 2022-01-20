@@ -13,6 +13,10 @@ import { FAQComponent } from './sections/faq/faq.component';
 import { SettingsComponent } from './sections/settings/settings.component';
 import { OverviewComponent } from './sections/overview/overview.component';
 import { NotificationsComponent } from './sections/notifications/notifications.component';
+import { BarChartComponent } from './charts/bar-chart/bar-chart.component';
+import { LineChartComponent } from './charts/line-chart/line-chart.component';
+import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
+import { NgChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,10 +30,14 @@ import { NotificationsComponent } from './sections/notifications/notifications.c
     SettingsComponent,
     OverviewComponent,
     NotificationsComponent,
+    BarChartComponent,
+    LineChartComponent,
+    PieChartComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
