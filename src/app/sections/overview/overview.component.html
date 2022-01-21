@@ -1,12 +1,116 @@
 <div class="section-container">
+    <h2 class="section-title">Overview</h2>
     <div class="cards">
         <div class="card-deck">
             <div class="card mb-3 shadow card-theme">
                 <div class="card-header card-header-theme">
-                    <h5>Daily</h5>
+                    <h5>Total Tasks</h5>
                 </div>
                 <div class="card-body">
+                    <H3>{{500}}</H3>
+                </div>
+            </div>
+            <div class="card mb-3 shadow card-theme">
+                <div class="card-header card-header-theme" >
+                    <h5>Tasks Left</h5>
+                </div>
+                <div class="card-body" style="padding:0px;">
+                    <div style="padding: 1.25em;">
+                        <H3>{{200}}</H3>
+                    </div>
+                    <hr class="splitter">
+                    <p class="card-body-link" routerLink="/details" [queryParams]="{action:'caca'}">view details</p>
+                </div>
+            </div>
+            <div class="card mb-3 shadow card-theme">
+                <div class="card-header card-header-theme">
+                    <h5>Money Spent</h5>
+                </div>
+                <div class="card-body">
+                    <H3>{{4600}}$</H3>
+                </div>
+            </div>
+            <div class="card mb-3 shadow card-theme">
+                <div class="card-header card-header-theme">
+                    <h5>Money Goal</h5>
+                </div>
+                <div class="card-body">
+                    <H3>{{14600}}$</H3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cards">
+        <div class="card-deck">
+            <div class="card mb-3 shadow card-theme">
+                <div class="card-body">
                     <app-bar-chart></app-bar-chart>
+                </div>
+            </div>
+            <div class="card mb-3 shadow card-theme">
+                <div class="card-body">
+                    <app-pie-chart></app-pie-chart>
+                </div>
+            </div>
+            <div class="card mb-3 shadow card-theme">
+                <div class="card-body">
+                    <app-line-chart></app-line-chart>
+                </div>
+            </div>
+            <div class="card mb-3 shadow card-theme">
+                <div class="card-body">
+                    <app-line-chart></app-line-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2 class="section-title">Quick Add</h2>
+    <div class="cards">
+        <div class="card-deck">
+            <div class="card mb-3 shadow card-theme">
+                <div class="card-header card-header-theme">
+                    <h5>Task</h5>
+                </div>
+                <div class="card-body">
+                    <form id="task">
+                        <mat-form-field style="width: 100%;" appearance="fill">
+                          <mat-label>Select existing task</mat-label>
+                          <input
+                           matInput 
+                           placeholder          = "Ex. Weekly collaboration" 
+                           [formControl]        = "taskControl"
+                           [matAutocomplete]    = "auto">
+                        </mat-form-field>
+                          <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let option of taskFilteredOptions | async" [value]="option">
+                              {{option}}
+                            </mat-option>
+                          </mat-autocomplete>
+                          <button mat-raised-button class="btn-accent">Add</button>
+                      </form>
+                </div>
+            </div>
+            <div class="card mb-3 shadow card-theme">
+                <div class="card-header card-header-theme">
+                    <h5>Expense</h5>
+                </div>
+                <div class="card-body">
+                    <form id="expense">
+                        <mat-form-field style="width: 100%;" appearance="fill">
+                          <mat-label>Select existing expense</mat-label>
+                          <input
+                           matInput 
+                           placeholder          = "Ex. Health Insurance" 
+                           [formControl]        = "expenseControl"
+                           [matAutocomplete]    = "auto">
+                        </mat-form-field>
+                          <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let option of expenseFilteredOptions | async" [value]="option">
+                              {{option}}
+                            </mat-option>
+                          </mat-autocomplete>
+                          <button mat-raised-button class="btn-accent">Add</button>
+                      </form>
                 </div>
             </div>
         </div>

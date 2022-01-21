@@ -17,11 +17,11 @@ export class BarChartComponent implements OnInit {
 
   constructor() { }
 
-  public barChartData : any[] = SAMPLE_BARCHART_DATA;
-  public barChartLabels : string[] = SAMPLE_BARCHART_LABELS;
-  public barChartType:  ChartType = "bar";
-  public barChartLegend = true;
-  public barChartOptions : any = {
+  public barChartData     : any[]     = SAMPLE_BARCHART_DATA;
+  public barChartLabels   : string[]  = SAMPLE_BARCHART_LABELS;
+  public barChartType     : ChartType = "bar";
+  public barChartLegend   : boolean   = true;
+  public barChartOptions  : any       = {
     scaleShowVerticalLines : false,
     responsive : true
   };
